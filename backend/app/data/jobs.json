@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "skills": ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "TypeScript"],
+    "requirements": ["Build responsive and interactive UIs", "Strong understanding of React and hooks", "Knowledge of REST APIs and JSON"],
+    "demand": "High",
+    "avg_salary": "₹7–14 LPA",
+    "description": "Frontend Developers create engaging user interfaces using modern frameworks like React or Vue."
+  },
+  {
+    "id": 2,
+    "title": "Backend Developer",
+    "skills": ["Python", "FastAPI", "SQL", "REST APIs", "Docker"],
+    "requirements": ["Experience in backend frameworks like FastAPI or Django", "Ability to design RESTful APIs", "Knowledge of databases and ORMs"],
+    "demand": "High",
+    "avg_salary": "₹8–16 LPA",
+    "description": "Backend Developers build APIs and manage server-side logic and databases."
+  },
+  {
+    "id": 3,
+    "title": "Data Analyst",
+    "skills": ["Python", "Pandas", "SQL", "Excel", "Power BI", "Statistics"],
+    "requirements": ["Analyze datasets and visualize insights", "Use Python libraries like Pandas and Matplotlib", "Create dashboards using Power BI or Tableau"],
+    "demand": "Very High",
+    "avg_salary": "₹6–12 LPA",
+    "description": "Data Analysts convert data into meaningful business insights."
+  },
+  {
+    "id": 4,
+    "title": "Data Scientist",
+    "skills": ["Python", "R", "Machine Learning", "SQL", "TensorFlow", "Pandas"],
+    "requirements": ["Build predictive models", "Perform statistical analysis", "Deploy machine learning models"],
+    "demand": "Very High",
+    "avg_salary": "₹12–25 LPA",
+    "description": "Data Scientists analyze complex datasets to drive decision-making."
+  },
+  {
+    "id": 5,
+    "title": "Machine Learning Engineer",
+    "skills": ["Python", "TensorFlow", "PyTorch", "ML Algorithms", "Data Pipelines", "Docker"],
+    "requirements": ["Develop and optimize ML models", "Implement data pipelines", "Deploy ML models into production"],
+    "demand": "High",
+    "avg_salary": "₹10–22 LPA",
+    "description": "ML Engineers build and deploy machine learning models for various applications."
+  },
+  {
+    "id": 6,
+    "title": "Data Engineer",
+    "skills": ["Python", "SQL", "Spark", "ETL", "Airflow", "AWS"],
+    "requirements": ["Design and maintain data pipelines", "Handle large datasets efficiently", "Work with cloud data solutions"],
+    "demand": "High",
+    "avg_salary": "₹9–20 LPA",
+    "description": "Data Engineers create pipelines to process and store data for analytics and ML."
+  },
+  {
+    "id": 7,
+    "title": "Product Engineer",
+    "skills": ["JavaScript", "React", "Node.js", "REST APIs", "Agile", "Git"],
+    "requirements": ["Develop product features", "Collaborate with cross-functional teams", "Write clean and maintainable code"],
+    "demand": "High",
+    "avg_salary": "₹8–18 LPA",
+    "description": "Product Engineers design and implement features for software products."
+  },
+  {
+    "id": 8,
+    "title": "Cybersecurity Analyst",
+    "skills": ["Network Security", "Python", "Penetration Testing", "SIEM", "Firewalls", "Ethical Hacking"],
+    "requirements": ["Monitor security incidents", "Perform vulnerability assessments", "Implement security controls"],
+    "demand": "Very High",
+    "avg_salary": "₹9–20 LPA",
+    "description": "Cybersecurity Analysts protect systems from security threats and breaches."
+  },
+  {
+    "id": 9,
+    "title": "QA Tester",
+    "skills": ["Manual Testing", "Selenium", "Postman", "Test Cases", "Bug Reporting", "Agile"],
+    "requirements": ["Test applications for bugs", "Write test cases", "Collaborate with developers to resolve issues"],
+    "demand": "High",
+    "avg_salary": "₹5–10 LPA",
+    "description": "QA Testers ensure software quality by executing test cases and reporting defects."
+  },
+  {
+    "id": 10,
+    "title": "QA Automation Engineer",
+    "skills": ["Selenium", "Python", "Java", "CI/CD", "Test Automation", "Git"],
+    "requirements": ["Automate test scripts", "Integrate tests with CI/CD pipelines", "Maintain automated test suites"],
+    "demand": "High",
+    "avg_salary": "₹7–15 LPA",
+    "description": "QA Automation Engineers automate testing to improve efficiency and reliability."
+  },
+  {
+    "id": 11,
+    "title": "Frontend Intern",
+    "skills": ["HTML", "CSS", "JavaScript", "React"],
+    "requirements": ["Assist in building UI components", "Learn frontend best practices", "Collaborate with development team"],
+    "demand": "Medium",
+    "avg_salary": "₹2–4 LPA",
+    "description": "Frontend Interns support development of web interfaces and gain hands-on experience."
+  },
+  {
+    "id": 12,
+    "title": "Backend Intern",
+    "skills": ["Python", "FastAPI", "SQL"],
+    "requirements": ["Assist in API development", "Learn backend best practices", "Work with databases"],
+    "demand": "Medium",
+    "avg_salary": "₹2–4 LPA",
+    "description": "Backend Interns support server-side development and learn backend frameworks."
+  },
+  {
+    "id": 13,
+    "title": "Data Analyst Intern",
+    "skills": ["Excel", "SQL", "Python", "Data Visualization"],
+    "requirements": ["Assist in analyzing datasets", "Create basic dashboards", "Support data reporting tasks"],
+    "demand": "Medium",
+    "avg_salary": "₹2–4 LPA",
+    "description": "Data Analyst Interns gain practical experience in analyzing and visualizing data."
+  },
+  {
+    "id": 14,
+    "title": "Data Scientist Intern",
+    "skills": ["Python", "Pandas", "Scikit-learn", "Machine Learning"],
+    "requirements": ["Assist in ML projects", "Perform exploratory data analysis", "Learn modeling techniques"],
+    "demand": "High",
+    "avg_salary": "₹3–5 LPA",
+    "description": "Data Scientist Interns support data science projects under mentorship."
+  },
+  {
+    "id": 15,
+    "title": "Cybersecurity Intern",
+    "skills": ["Networking", "Python", "Ethical Hacking"],
+    "requirements": ["Learn threat analysis", "Assist in vulnerability assessments", "Support security operations"],
+    "demand": "High",
+    "avg_salary": "₹3–5 LPA",
+    "description": "Cybersecurity Interns assist in monitoring and securing IT systems."
+  },
+  {
+    "id": 16,
+    "title": "Machine Learning Intern",
+    "skills": ["Python", "TensorFlow", "ML Algorithms", "Data Processing"],
+    "requirements": ["Assist in building ML models", "Perform data preprocessing", "Collaborate with ML engineers"],
+    "demand": "High",
+    "avg_salary": "₹3–5 LPA",
+    "description": "ML Interns help develop machine learning models and learn model deployment."
+  },
+  {
+    "id": 17,
+    "title": "Product Engineer Intern",
+    "skills": ["JavaScript", "React", "Node.js"],
+    "requirements": ["Assist in product development", "Learn Agile practices", "Collaborate with team members"],
+    "demand": "Medium",
+    "avg_salary": "₹2–4 LPA",
+    "description": "Product Engineer Interns support the product development process."
+  },
+  {
+    "id": 18,
+    "title": "Big Data Engineer",
+    "skills": ["Spark", "Hadoop", "Python", "SQL", "ETL", "AWS"],
+    "requirements": ["Process large datasets", "Build ETL pipelines", "Work with cloud data infrastructure"],
+    "demand": "High",
+    "avg_salary": "₹10–22 LPA",
+    "description": "Big Data Engineers manage and process massive datasets for analytics."
+  },
+  {
+    "id": 19,
+    "title": "Security Engineer",
+    "skills": ["Network Security", "Firewalls", "Penetration Testing", "Python", "SIEM"],
+    "requirements": ["Implement security protocols", "Monitor system security", "Perform vulnerability testing"],
+    "demand": "Very High",
+    "avg_salary": "₹12–22 LPA",
+    "description": "Security Engineers design and maintain secure IT systems."
+  },
+  {
+    "id": 20,
+    "title": "Data Visualization Specialist",
+    "skills": ["Tableau", "Power BI", "Python", "Matplotlib", "Seaborn", "Excel"],
+    "requirements": ["Create dashboards", "Visualize complex datasets", "Provide actionable insights"],
+    "demand": "High",
+    "avg_salary": "₹8–15 LPA",
+    "description": "Data Visualization Specialists turn data into intuitive visual representations."
+  },
+  {
+    "id": 21,
+    "title": "Business Intelligence Analyst",
+    "skills": ["SQL", "Power BI", "Excel", "Data Warehousing", "Python"],
+    "requirements": ["Analyze business data", "Build reports and dashboards", "Support decision-making processes"],
+    "demand": "High",
+    "avg_salary": "₹8–16 LPA",
+    "description": "BI Analysts turn raw data into actionable business insights."
+  },
+  {
+    "id": 22,
+    "title": "Network Engineer",
+    "skills": ["Networking", "Cisco", "Firewall", "LAN/WAN", "Troubleshooting"],
+    "requirements": ["Design and maintain network infrastructure", "Monitor network performance", "Troubleshoot connectivity issues"],
+    "demand": "High",
+    "avg_salary": "₹7–15 LPA",
+    "description": "Network Engineers manage and maintain reliable network systems."
+  },
+  {
+    "id": 23,
+    "title": "Cloud Architect",
+    "skills": ["AWS", "Azure", "Cloud Security", "DevOps", "Architecture Design"],
+    "requirements": ["Design scalable cloud systems", "Ensure security and compliance", "Lead cloud migration projects"],
+    "demand": "High",
+    "avg_salary": "₹12–25 LPA",
+    "description": "Cloud Architects design and oversee cloud infrastructure solutions."
+  },
+  {
+    "id": 24,
+    "title": "Project Manager",
+    "skills": ["Agile", "Scrum", "Communication", "Leadership", "Planning"],
+    "requirements": ["Manage projects and timelines", "Coordinate cross-functional teams", "Ensure project delivery"],
+    "demand": "High",
+    "avg_salary": "₹10–20 LPA",
+    "description": "Project Managers oversee projects from planning to execution."
+  },
+  {
+    "id": 25,
+    "title": "Scrum Master",
+    "skills": ["Agile", "Scrum", "Facilitation", "JIRA", "Leadership"],
+    "requirements": ["Facilitate Scrum ceremonies", "Coach teams in Agile practices", "Remove impediments for teams"],
+    "demand": "High",
+    "avg_salary": "₹9–18 LPA",
+    "description": "Scrum Masters help teams work efficiently using Agile methodologies."
+  },
+  {
+    "id": 26,
+    "title": "UX Designer",
+    "skills": ["Figma", "Sketch", "Wireframing", "Prototyping", "User Research"],
+    "requirements": ["Design user-friendly interfaces", "Conduct usability testing", "Create wireframes and prototypes"],
+    "demand": "High",
+    "avg_salary": "₹7–15 LPA",
+    "description": "UX Designers create intuitive and engaging user experiences."
+  },
+  {
+    "id": 27,
+    "title": "UI Designer",
+    "skills": ["Photoshop", "Illustrator", "Figma", "Prototyping", "HTML/CSS basics"],
+    "requirements": ["Design visually appealing interfaces", "Collaborate with developers", "Maintain design consistency"],
+    "demand": "High",
+    "avg_salary": "₹6–12 LPA",
+    "description": "UI Designers focus on the visual aspects of web and mobile interfaces."
+  },
+  {
+    "id": 28,
+    "title": "Software Tester Lead",
+    "skills": ["Test Management", "Selenium", "JIRA", "Test Planning", "Team Management"],
+    "requirements": ["Lead QA team", "Define testing strategy", "Monitor quality metrics"],
+    "demand": "High",
+    "avg_salary": "₹10–18 LPA",
+    "description": "QA Leads oversee testing activities and ensure high software quality."
+  },
+  {
+    "id": 29,
+    "title": "DevOps Engineer",
+    "skills": ["CI/CD", "Docker", "Kubernetes", "AWS", "Terraform"],
+    "requirements": ["Automate deployment pipelines", "Monitor infrastructure", "Support development teams"],
+    "demand": "High",
+    "avg_salary": "₹10–22 LPA",
+    "description": "DevOps Engineers bridge development and operations to streamline releases."
+  },
+  {
+    "id": 30,
+    "title": "Senior Backend Developer",
+    "skills": ["Python", "Django", "FastAPI", "SQL", "APIs"],
+    "requirements": ["Design scalable backend systems", "Optimize performance", "Mentor junior developers"],
+    "demand": "High",
+    "avg_salary": "₹12–25 LPA",
+    "description": "Senior Backend Developers lead backend development projects."
+  },
+  {
+    "id": 31,
+    "title": "Senior Frontend Developer",
+    "skills": ["React", "JavaScript", "TypeScript", "CSS", "Redux"],
+    "requirements": ["Develop complex frontend applications", "Optimize UI performance", "Mentor junior frontend developers"],
+    "demand": "High",
+    "avg_salary": "₹12–25 LPA",
+    "description": "Senior Frontend Developers design and implement sophisticated user interfaces."
+  },
+  {
+    "id": 32,
+    "title": "Data Analytics Lead",
+    "skills": ["SQL", "Python", "R", "Power BI", "Leadership"],
+    "requirements": ["Lead analytics projects", "Manage team of analysts", "Deliver insights to stakeholders"],
+    "demand": "Very High",
+    "avg_salary": "₹15–30 LPA",
+    "description": "Data Analytics Leads oversee data analysis projects and teams."
+  },
+  {
+    "id": 33,
+    "title": "ML Research Scientist",
+    "skills": ["Python", "PyTorch", "TensorFlow", "ML Algorithms", "Research"],
+    "requirements": ["Conduct ML research", "Publish findings", "Develop experimental models"],
+    "demand": "High",
+    "avg_salary": "₹18–35 LPA",
+    "description": "ML Research Scientists explore advanced machine learning methods and solutions."
+  },
+  {
+    "id": 34,
+    "title": "AI Engineer",
+    "skills": ["Python", "Deep Learning", "Computer Vision", "NLP", "TensorFlow"],
+    "requirements": ["Implement AI models", "Deploy AI systems", "Optimize model performance"],
+    "demand": "High",
+    "avg_salary": "₹12–28 LPA",
+    "description": "AI Engineers build and deploy artificial intelligence solutions."
+  },
+  {
+    "id": 35,
+    "title": "Cloud Security Engineer",
+    "skills": ["AWS", "Azure", "Security", "IAM", "Compliance"],
+    "requirements": ["Implement cloud security measures", "Monitor cloud infrastructure", "Ensure regulatory compliance"],
+    "demand": "Very High",
+    "avg_salary": "₹14–28 LPA",
+    "description": "Cloud Security Engineers secure cloud platforms and services."
+  },
+  {
+    "id": 36,
+    "title": "Technical Writer",
+    "skills": ["Documentation", "Markdown", "Git", "APIs", "Communication"],
+    "requirements": ["Write technical guides", "Create API documentation", "Collaborate with developers"],
+    "demand": "Medium",
+    "avg_salary": "₹5–10 LPA",
+    "description": "Technical Writers create documentation to help users and developers."
+  },
+  {
+    "id": 37,
+    "title": "Data Quality Analyst",
+    "skills": ["SQL", "Excel", "Python", "Data Validation", "ETL"],
+    "requirements": ["Ensure accuracy of datasets", "Perform data cleansing", "Monitor data quality metrics"],
+    "demand": "High",
+    "avg_salary": "₹7–15 LPA",
+    "description": "Data Quality Analysts maintain the integrity of data used for analysis and ML."
+  },
+  {
+    "id": 38,
+    "title": "Business Analyst",
+    "skills": ["Requirements Gathering", "SQL", "Excel", "Communication", "Documentation"],
+    "requirements": ["Analyze business needs", "Prepare requirement documents", "Work with stakeholders"],
+    "demand": "High",
+    "avg_salary": "₹8–16 LPA",
+    "description": "Business Analysts bridge business requirements and technical solutions."
+  },
+  {
+    "id": 39,
+    "title": "Network Security Engineer",
+    "skills": ["Firewall", "VPN", "IDS/IPS", "Python", "Monitoring"],
+    "requirements": ["Protect network infrastructure", "Monitor for intrusions", "Implement security policies"],
+    "demand": "High",
+    "avg_salary": "₹10–20 LPA",
+    "description": "Network Security Engineers safeguard organizational network systems."
+  },
+  {
+    "id": 40,
+    "title": "DevOps Lead",
+    "skills": ["CI/CD", "Docker", "Kubernetes", "AWS", "Leadership"],
+    "requirements": ["Lead DevOps team", "Design deployment pipelines", "Ensure smooth releases"],
+    "demand": "High",
+    "avg_salary": "₹15–30 LPA",
+    "description": "DevOps Leads manage infrastructure and deployment processes at scale."
+  },
+  {
+    "id": 41,
+    "title": "Senior Data Engineer",
+    "skills": ["Python", "SQL", "Spark", "Airflow", "AWS"],
+    "requirements": ["Design and optimize data pipelines", "Manage large-scale data systems", "Mentor junior engineers"],
+    "demand": "High",
+    "avg_salary": "₹12–28 LPA",
+    "description": "Senior Data Engineers design complex data infrastructure for analytics and ML."
+  },
+  {
+    "id": 42,
+    "title": "AI Research Intern",
+    "skills": ["Python", "ML", "NLP", "Computer Vision"],
+    "requirements": ["Assist in AI research projects", "Perform experiments", "Document findings"],
+    "demand": "Medium",
+    "avg_salary": "₹2–4 LPA",
+    "description": "AI Research Interns support AI research under guidance."
+  },
+  {
+    "id": 43,
+    "title": "Mobile App Developer",
+    "skills": ["React Native", "Flutter", "iOS", "Android", "APIs"],
+    "requirements": ["Develop cross-platform apps", "Integrate APIs", "Optimize performance"],
+    "demand": "High",
+    "avg_salary": "₹8–18 LPA",
+    "description": "Mobile App Developers create apps for iOS and Android platforms."
+  },
+  {
+    "id": 44,
+    "title": "Full Stack Developer",
+    "skills": ["React", "Node.js", "Python", "SQL", "REST APIs"],
+    "requirements": ["Develop frontend and backend", "Integrate databases", "Deploy applications"],
+    "demand": "Very High",
+    "avg_salary": "₹10–22 LPA",
+    "description": "Full Stack Developers handle both frontend and backend development."
+  },
+  {
+    "id": 45,
+    "title": "System Administrator",
+    "skills": ["Linux", "Windows Server", "Networking", "Scripting", "Monitoring"],
+    "requirements": ["Maintain IT systems", "Monitor servers", "Perform backups and updates"],
+    "demand": "Medium",
+    "avg_salary": "₹6–12 LPA",
+    "description": "System Administrators manage and maintain servers and IT infrastructure."
+  },
+  {
+    "id": 46,
+    "title": "Blockchain Developer",
+    "skills": ["Solidity", "Ethereum", "Smart Contracts", "Python", "Web3.js"],
+    "requirements": ["Develop blockchain applications", "Write smart contracts", "Integrate with decentralized apps"],
+    "demand": "High",
+    "avg_salary": "₹12–25 LPA",
+    "description": "Blockchain Developers create decentralized applications using blockchain technology."
+  },
+  {
+    "id": 47,
+    "title": "Robotics Engineer",
+    "skills": ["Python", "C++", "ROS", "Embedded Systems", "AI"],
+    "requirements": ["Design robotic systems", "Integrate sensors and actuators", "Develop control algorithms"],
+    "demand": "Medium",
+    "avg_salary": "₹10–20 LPA",
+    "description": "Robotics Engineers build automated systems using software and hardware."
+  },
+  {
+    "id": 48,
+    "title": "IoT Developer",
+    "skills": ["Python", "C", "Embedded Systems", "Sensors", "Cloud Integration"],
+    "requirements": ["Develop IoT devices", "Integrate sensors", "Implement cloud connectivity"],
+    "demand": "High",
+    "avg_salary": "₹8–18 LPA",
+    "description": "IoT Developers create interconnected devices and systems for smart applications."
+  },
+  {
+    "id": 49,
+    "title": "Technical Support Engineer",
+    "skills": ["Troubleshooting", "Networking", "Communication", "Linux/Windows", "Documentation"],
+    "requirements": ["Resolve technical issues", "Assist users", "Document solutions"],
+    "demand": "Medium",
+    "avg_salary": "₹4–8 LPA",
+    "description": "Technical Support Engineers provide help and solutions to IT-related problems."
+  },
+  {
+    "id": 50,
+    "title": "IT Consultant",
+    "skills": ["Business Analysis", "IT Strategy", "Communication", "Project Management", "Cloud"],
+    "requirements": ["Advise clients on IT solutions", "Plan IT strategies", "Manage client projects"],
+    "demand": "High",
+    "avg_salary": "₹12–24 LPA",
+    "description": "IT Consultants help organizations implement effective technology solutions."
+  }
+]
