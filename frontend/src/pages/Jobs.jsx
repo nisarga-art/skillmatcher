@@ -10,6 +10,7 @@ export default function Jobs() {
   const [matchResults, setMatchResults] = useState({});
   const [resumes, setResumes] = useState([]);
   const [improvedResume, setImprovedResume] = useState({});
+  const API_BASE = import.meta.env.VITE_API_BASE;
 
   useEffect(() => {
     fetchJobs();
@@ -17,72 +18,52 @@ export default function Jobs() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // -----------------------------------------
-  // Safe parse helper: handles stringified arrays,
-  // double-encoded JSON, escaped quotes, newlines, etc.
-  // Always returns an array (fallback default).
-  // -----------------------------------------
   const safeParse = (value, fallback = []) => {
     if (!value) return fallback;
     if (Array.isArray(value)) return value;
-
-    // If it's a non-empty string, attempt to clean and parse
     if (typeof value === "string") {
       let cleaned = value.trim();
-
-      // Remove wrapping quotes if the whole value is wrapped, e.g. "\"[...]" or '"[...]"'
       if ((cleaned.startsWith('"') && cleaned.endsWith('"')) || (cleaned.startsWith("'") && cleaned.endsWith("'"))) {
         cleaned = cleaned.slice(1, -1);
       }
-
-      // Fix common escaped characters
-      cleaned = cleaned.replace(/\\"/g, '"'); // unescape \" -> "
-      cleaned = cleaned.replace(/\\'/g, "'"); // unescape \'
-      cleaned = cleaned.replace(/\\n/g, ""); // remove escaped newlines
+      cleaned = cleaned.replace(/\\"/g, '"');
+      cleaned = cleaned.replace(/\\'/g, "'");
+      cleaned = cleaned.replace(/\\n/g, "");
       cleaned = cleaned.replace(/\\r/g, "");
       cleaned = cleaned.replace(/\\t/g, " ");
-      cleaned = cleaned.replace(/\\\\/g, "\\"); // double backslashes -> single
+      cleaned = cleaned.replace(/\\\\/g, "\\");
 
       try {
         const parsed = JSON.parse(cleaned);
         return Array.isArray(parsed) ? parsed : fallback;
       } catch (err) {
-        // Last attempt: try to split by comma for very dirty strings like "React,JS,HTML"
         const maybeList = cleaned.split(",").map((s) => s.trim()).filter(Boolean);
         return maybeList.length ? maybeList : fallback;
       }
     }
-
-    // Not array or string -> fallback
     return fallback;
   };
 
-  // -----------------------------------------
-  // Fetch jobs (handles array or object-wrapped response)
-  // -----------------------------------------
   const fetchJobs = async () => {
     setLoading(true);
     setFetchError(null);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/jobs/");
+      const res = await fetch(`${API_BASE}/jobs/`);
       if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
 
       let data = await res.json();
       console.log("📨 Raw jobs response:", data);
 
-      // If wrapped as { jobs: [...] }
       if (data && typeof data === "object" && !Array.isArray(data) && Array.isArray(data.jobs)) {
         data = data.jobs;
       }
 
       if (!Array.isArray(data)) {
-        // If backend unexpectedly returns something else, set error and stop
         throw new Error("Unexpected jobs response format (expected array or { jobs: [...] })");
       }
 
       const cleaned = data.map((job) => ({
-        // keep all original fields, but make sure skills/requirements are arrays
         ...job,
         requirements: safeParse(job?.requirements, []),
         skills: safeParse(job?.skills, []),
@@ -93,30 +74,23 @@ export default function Jobs() {
     } catch (err) {
       console.error("❌ Jobs fetch error:", err);
       setFetchError(String(err.message || err));
-      setJobs([]); // keep UI stable
+      setJobs([]);
     } finally {
       setLoading(false);
     }
   };
 
-  // -----------------------------------------
-  // Fetch uploaded resumes list
-  // -----------------------------------------
   const fetchResumes = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/resumes/");
+      const res = await fetch(`${API_BASE}/resumes/`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       setResumes(data.uploaded_resumes || []);
     } catch (err) {
       console.warn("⚠️ Resume fetch error:", err);
-      // don't surface fatal error to user here — resumes list is optional
     }
   };
 
-  // -----------------------------------------
-  // Simple toast helper (DOM-based, non-library)
-  // -----------------------------------------
   const showToast = (msg, type = "info") => {
     const color =
       type === "success" ? "bg-green-500" : type === "error" ? "bg-red-500" : "bg-pink-500";
@@ -128,17 +102,10 @@ export default function Jobs() {
     setTimeout(() => toast.remove(), 3000);
   };
 
-  // -----------------------------------------
-  // Handle file selection
-  // -----------------------------------------
   const handleFileChange = (jobId, file) => {
     setSelectedFiles((prev) => ({ ...prev, [jobId]: file }));
   };
 
-  // -----------------------------------------
-  // Upload resume -> backend analysis
-  // Keeps old behavior: sends job_id + uploaded_by
-  // -----------------------------------------
   const handleApply = async (jobId) => {
     const file = selectedFiles[jobId];
     if (!file) {
@@ -153,12 +120,11 @@ export default function Jobs() {
     formData.append("uploaded_by", "User1");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/resumes/upload", {
+      const res = await fetch(`${API_BASE}/resumes/upload`, {
         method: "POST",
         body: formData,
       });
 
-      // Try parse JSON safely
       let data;
       try {
         data = await res.json();
@@ -171,17 +137,14 @@ export default function Jobs() {
         throw new Error(errMsg);
       }
 
-      // Save whatever backend returned for match results (safe)
       setMatchResults((prev) => ({ ...prev, [jobId]: data || {} }));
       setImprovedResume((prev) => ({ ...prev, [jobId]: data?.improved_resume || "" }));
       setSelectedFiles((prev) => ({ ...prev, [jobId]: null }));
 
-      // refresh resumes list
       fetchResumes();
 
       showToast("✅ Resume uploaded and analyzed!", "success");
 
-      // scroll into view for results if present
       setTimeout(() => {
         const el = document.getElementById(`result-${jobId}`);
         if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -194,9 +157,6 @@ export default function Jobs() {
     }
   };
 
-  // -----------------------------------------
-  // UI
-  // -----------------------------------------
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center text-pink-700 text-lg">
@@ -239,14 +199,9 @@ export default function Jobs() {
                 <h3 className="font-semibold text-lg text-gray-800 mb-2">{job.title}</h3>
                 <p className="text-gray-600 mb-3">{job.description}</p>
 
-                
-
-                
-
                 <p className="text-sm text-gray-700">📈 Demand: <b>{job.demand || "N/A"}</b></p>
                 <p className="text-sm text-gray-700 mb-3">💰 Avg Salary: <b>{job.avg_salary || "N/A"}</b></p>
 
-                {/* Upload */}
                 <div className="mt-3">
                   <input
                     type="file"
@@ -266,7 +221,6 @@ export default function Jobs() {
                   </button>
                 </div>
 
-                {/* Results */}
                 {matchResults[job.id]?.recommendations?.length > 0 && (
                   <div id={`result-${job.id}`} className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-sm">
                     <p className="font-semibold text-green-700 mb-2">🧠 Resume Analysis Result:</p>
@@ -282,16 +236,14 @@ export default function Jobs() {
                   </div>
                 )}
 
-                {/* Improved Resume */}
                 {improvedResume[job.id] && (
                   <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-900">
                     <p className="font-semibold text-blue-700 mb-2">📝 Improved Resume:</p>
                     <pre className="whitespace-pre-wrap text-xs">{improvedResume[job.id]}</pre>
 
-                    {/* If backend provides resume file id/url, show download (fallback uses resume_id) */}
                     {matchResults[job.id]?.resume_id && (
                       <a
-                        href={`http://127.0.0.1:8000/resumes/download/${matchResults[job.id].resume_id}`}
+                        href={`${API_BASE}/resumes/download/${matchResults[job.id].resume_id}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block mt-3 px-3 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600"
@@ -306,7 +258,6 @@ export default function Jobs() {
           })}
         </div>
 
-        {/* Uploaded Resumes List (bottom) */}
         <div className="mt-10">
           <h4 className="font-semibold text-gray-800 mb-2">📂 Uploaded Resumes</h4>
           <ul className="text-sm text-gray-700 list-disc pl-5">
